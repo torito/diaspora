@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20110830170929) do
-=======
-ActiveRecord::Schema.define(:version => 20110824190037) do
->>>>>>> Introduced Shareable
+ActiveRecord::Schema.define(:version => 20110918123422) do
 
   create_table "aspect_memberships", :force => true do |t|
     t.integer  "aspect_id",  :null => false
@@ -239,6 +235,35 @@ ActiveRecord::Schema.define(:version => 20110824190037) do
   add_index "people", ["guid"], :name => "index_people_on_guid", :unique => true
   add_index "people", ["owner_id"], :name => "index_people_on_owner_id", :unique => true
 
+  create_table "photos", :force => true do |t|
+    t.integer  "author_id",                                              :null => false
+    t.boolean  "public",                              :default => false, :null => false
+    t.string   "diaspora_handle"
+    t.string   "guid",                                                   :null => false
+    t.boolean  "pending",                             :default => false, :null => false
+    t.string   "type",                  :limit => 40
+    t.text     "text"
+    t.text     "remote_photo_path"
+    t.string   "remote_photo_name"
+    t.string   "random_string"
+    t.string   "processed_image"
+    t.text     "youtube_titles"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "unprocessed_image"
+    t.string   "object_url"
+    t.string   "image_url"
+    t.integer  "image_height"
+    t.integer  "image_width"
+    t.string   "provider_display_name"
+    t.string   "actor_url"
+    t.integer  "objectId"
+    t.string   "root_guid",             :limit => 30
+    t.string   "status_message_guid"
+    t.integer  "likes_count",                         :default => 0
+    t.string   "comments_count"
+  end
+
   create_table "pods", :force => true do |t|
     t.string   "host"
     t.boolean  "ssl"
@@ -272,6 +297,7 @@ ActiveRecord::Schema.define(:version => 20110824190037) do
     t.string   "root_guid",             :limit => 30
     t.string   "status_message_guid"
     t.integer  "likes_count",                         :default => 0
+    t.integer  "comments_count",                      :default => 0
   end
 
   add_index "posts", ["author_id"], :name => "index_posts_on_person_id"
@@ -330,6 +356,7 @@ ActiveRecord::Schema.define(:version => 20110824190037) do
     t.datetime "updated_at"
   end
 
+  add_index "services", ["type", "uid"], :name => "index_services_on_type_and_uid"
   add_index "services", ["user_id"], :name => "index_services_on_user_id"
 
   create_table "share_visibilities", :force => true do |t|
