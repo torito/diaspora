@@ -23,8 +23,8 @@
       });
 
       // tipsy tooltips
-      self.deletePostLink.tipsy({ trigger: "hover" });
-      self.postScope.tipsy({ trigger: "hover" });
+      self.deletePostLink.twipsy();
+      self.postScope.twipsy();
 
       // collapse long posts
       // self.content.expander({

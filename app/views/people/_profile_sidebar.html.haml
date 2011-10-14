@@ -10,9 +10,9 @@
     - if person != current_user.person
       - if @contact && @contact.receiving?
         %br
-        = link_to t('people.show.mention'), new_status_message_path(:person_id => @person.id), :class => 'button', :rel => 'facebox'
+        = link_to t('people.show.mention'), new_status_message_path(:person_id => @person.id), :class => 'btn', :data => 'controls-modal'
         - if @contact.mutual?
-          = link_to t('people.show.message'), new_conversation_path(:contact_id => @contact.id, :name => @contact.person.name), :class => 'button', :rel => 'facebox'
+          = link_to t('people.show.message'), new_conversation_path(:contact_id => @contact.id, :name => @contact.person.name), :class => 'btn', :data => 'controls-modal'
       %br
       %br
     -if contact.sharing? || person == current_user.person

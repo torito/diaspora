@@ -1,16 +1,16 @@
-#author_info
+.page-header{:style => "position:relative;"}
   .right
     - if user_signed_in? && current_user.person != person
       = aspect_membership_dropdown(contact, person, 'right')
     - elsif user_signed_in? && current_user.person == person
-      = link_to t('people.profile_sidebar.edit_my_profile'), edit_profile_path, :class => 'button creation'
+      = link_to t('people.profile_sidebar.edit_my_profile'), edit_profile_path, :class => 'btn info'
 
-  %h2
+  %h1
     = person.name
-  %span.diaspora_handle
-    = person.diaspora_handle
+    %small
+      = person.diaspora_handle
 
-  .description
+  %p
     - if !person.profile.tag_string.blank? && user_signed_in?
       = Diaspora::Taggable.format_tags(person.profile.tag_string)
       - if user_signed_in? && person == current_user.person
@@ -23,4 +23,3 @@
           %span.add_tags
             = link_to t('.add_some'), edit_profile_path
 
-%hr

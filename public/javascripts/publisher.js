@@ -300,8 +300,8 @@ var Publisher = {
         $(this).attr('title', Diaspora.I18n.t('publisher.limited'));
       }
 
-      $(this).tipsy(true).fixTitle();
-      $(this).tipsy(true).show();
+      $(this).twipsy(true).fixTitle();
+      $(this).twipsy(true).show();
     });
   },
   toggleServiceField: function(service){

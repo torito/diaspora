@@ -114,7 +114,7 @@ var View = {
   tooltips: {
     public_badge: {
       bind: function() {
-        $(".public_badge img").tipsy({
+        $(".public_badge img").twipsy({
           live: true
         });
       }
@@ -122,7 +122,7 @@ var View = {
 
     conversation_participants: {
       bind: function() {
-        $(".conversation_participants img").tipsy({
+        $(".conversation_participants img").twipsy({
           live: true
         });
       }

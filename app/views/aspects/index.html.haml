@@ -6,34 +6,36 @@
 - content_for :head do
   = include_javascripts :home
 
-.span-5.leftNavBar
-  #home_user_badge
-    = owner_image_link
-    %h3
-      = current_user.first_name
+.span3.leftNavBar
+  .row
+    #home_user_badge
+      = owner_image_link
+      %h5
+        = current_user.first_name
 
-  - unless has_completed_getting_started?
-    .section
+    - unless has_completed_getting_started?
+      .section
+        %ul.left_nav
+          %li
+            = link_to "Welcome", getting_started_path, :class => "home_selector"
+
+    %section
+      = render 'aspects/aspect_listings', :stream => @stream
+
+    %section
       %ul.left_nav
-        %li
-          = link_to "Welcome", getting_started_path, :class => "home_selector"
+        .li
+          %b= link_to t('.mentions'), mentions_path, :class => 'home_selector'
 
-  .section
-    = render 'aspects/aspect_listings', :stream => @stream
+    .section#followed_tags_listing
+      = render 'tags/followed_tags_listings'
 
-  .section
-    %ul.left_nav
-      .li
-        %b= link_to t('.mentions'), mentions_path, :class => 'home_selector'
+.span9
+  .row
+    #aspect_stream_container.stream_container
+      = render 'aspects/aspect_stream', :stream => @stream
 
-  .section#followed_tags_listing
-    = render 'tags/followed_tags_listings'
-
-.span-13.append-1
-  #aspect_stream_container.stream_container
-    = render 'aspects/aspect_stream', :stream => @stream
-
-.span-5.rightBar.last
-  = render 'aspects/selected_contacts', :stream => @stream
-
-  = render 'shared/right_sections'
+.span3.rightBar.offset1
+  .row
+    = render 'aspects/selected_contacts', :stream => @stream
+    = render 'shared/right_sections'

@@ -12,10 +12,12 @@
   %h2
     = t('.title')
 
-= render 'shared/contact_sidebar'
+.span3
+  .row
+    = render 'shared/contact_sidebar'
 
-.span-18.last
-  #people_stream.stream.contacts
+.span13
+  #people_stream.stream.contacts.row
     - if @aspect
       #aspect_controls
         - suggested_limit = 16

@@ -12,6 +12,7 @@ javascripts:
   main:
     - public/javascripts/rails.js
     - public/javascripts/vendor/jquery.tipsy.js
+    - public/javascripts/vendor/bootstrap-twipsy.js
     - public/javascripts/vendor/jquery.hotkeys.js
     - public/javascripts/vendor/jquery.autoresize.min.js
     - public/javascripts/vendor/jquery-ui-1.8.9.custom.min.js
@@ -21,6 +22,7 @@ javascripts:
     - public/javascripts/vendor/timeago.js
     - public/javascripts/vendor/Mustache.js
     - public/javascripts/vendor/facebox.js
+    - public/javascripts/vendor/bootstrap-modal.js
     - public/javascripts/jquery.infinitescroll-custom.js
     - public/javascripts/jquery.autocomplete-custom.js
     - public/javascripts/jquery.infieldlabel-custom.js
