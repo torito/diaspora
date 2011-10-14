@@ -3203,6 +3203,9 @@ ul#getting_started
   :padding 0
   :margin 0
 
+  li
+    :list-style none
+
   > li
     :position relative
     :border
@@ -3213,38 +3216,13 @@ ul#getting_started
 
     .content
       :padding
-        :left 30px
+        :left 35px
 
     input[type='search']
       :width 210px
 
-    &.completed
-      @include opacity(0.4)
-      @include transition(opacity, 0.2s)
-
-      &:hover,
-      &:active
-        @include opacity(1)
-
-      .content h3
-        :text
-          :decoration line-through
-
   .profile
-    :min-height 170px
-
-#getting_started_profile_photo
-  :float right
-  .avatar
-    :height 150px
-    :width 150px
-    :margin
-      :left 5px
-
-#edit_profile_button_div
-  :padding
-    :top 90px
-    :bottom 20px
+    :min-height 200px
 
 #getting_started_service_icons
   :text-align center
