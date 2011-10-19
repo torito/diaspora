@@ -11,17 +11,10 @@ Feature: invitation acceptance
       And I press "Create my account"
       Then I should be on the getting started page
       And I should see "Welcome"
-      Then I follow Edit Profile in the same window
       And I fill in the following:
         | profile_first_name | O             |
-        | profile_last_name  | Hai           |
-        | tags               | #beingawesome |
-        | profile_bio        | swagger       |
-        | profile_location   | new york, ny  |
-        | profile_gender     | diasporian    |
-      And I press "Update Profile"
-			And I should see "Welcome"
-		  When I follow "Finished"
+
+      When I follow "awesome_button"
 		  Then I should be on the aspects page
 
     Scenario: accept invitation from user
@@ -35,17 +28,10 @@ Feature: invitation acceptance
       And I press "Create my account"
       Then I should be on the getting started page
       And I should see "Welcome"
-      Then I follow Edit Profile in the same window
       And I fill in the following:
         | profile_first_name | O             |
-        | profile_last_name  | Hai           |
-        | tags               | #beingawesome |
-        | profile_bio        | swagger       |
-        | profile_location   | new york, ny  |
-        | profile_gender     | diasporian    |
-      And I press "Update Profile"
-			And I should see "Welcome"
-		  When I follow "Finished"
+
+      When I follow "awesome_button"
 		  Then I should be on the aspects page
 
     Scenario: sends an invitation
