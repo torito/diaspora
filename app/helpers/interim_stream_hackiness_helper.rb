@@ -14,9 +14,17 @@ module InterimStreamHackinessHelper
     if params[:prefill].present?
       params[:prefill]
     elsif defined?(@stream)
-      @stream.publisher_prefill_text
+      @stream.publisher.prefill
     else
       nil
+    end
+  end
+
+  def publisher_open
+    if defined?(@stream)
+      @stream.publisher.open?
+    else
+      false
     end
   end
 end

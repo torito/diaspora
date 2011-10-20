@@ -40,11 +40,6 @@ class Stream::Base
     []
   end
 
-  # @return [String]
-  def publisher_prefill_text
-    ''
-  end
-
   # @return [ActiveRecord::Association<Person>] AR association of people within stream's given aspects
   def people
     people_ids = posts.map{|x| x.author_id}
@@ -103,6 +98,7 @@ class Stream::Base
     @order ||= 'created_at'
   end
 
+  # @return [Publisher]
   def publisher
     @publisher ||= Publisher.new(self.user)
   end
